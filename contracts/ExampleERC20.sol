@@ -5,10 +5,10 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract ExampleERC20 is ERC20, Ownable {
-  string private TOKEN_NAME = "DB Test ERC20 Token";
-  string private TOKEN_SYMBOL = "DTT";
+  string private TOKEN_NAME = "Avalaunch Project Token";
+  string private TOKEN_SYMBOL = "APT";
 
-  uint256 private constant TOTAL_SUPPLY = 10_000_000 * 10 ** 18;
+  uint256 private constant TOTAL_SUPPLY = 100_000_000 * 10 ** 18;
 
   constructor()ERC20(TOKEN_NAME, TOKEN_SYMBOL) {
     _mint(msg.sender, TOTAL_SUPPLY);

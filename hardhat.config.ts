@@ -90,7 +90,7 @@ export default {
       url: 'https://api.avax.network/ext/bc/C/rpc',
       gasPrice: 225000000000,
       chainId: 43114,
-      accounts: []
+      accounts: [`0x${PRIVATE_KEY_FUJI}`]
     }
   }
 }

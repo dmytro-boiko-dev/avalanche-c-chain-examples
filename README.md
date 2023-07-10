@@ -3,6 +3,12 @@
 This is fork of Avalanche quickstarter project which i'm using for experimenting with smart contracts on Avalanche networks.
 
 
+## Deploy ERC20 token
+```
+npx hardhat run scripts/deploy.ts --network fuji
+```
+
+
 ## Introduction
 
 Avalanche is an open-source platform for launching decentralized applications and enterprise blockchain deployments in one interoperable, highly scalable ecosystem. Avalanche gives you complete control on both the network and application layers&mdash;helping you build anything you can imagine.
