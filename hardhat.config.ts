@@ -12,8 +12,7 @@ require('dotenv').config();
 // https://hardhat.org/guides/mainnet-forking.html
 const FORK_FUJI = false
 const FORK_MAINNET = false
-const PRIVATE_KEY_FUJI = process.env.PRIVATE_KEY_FUJI;
-const PRIVATE_KEY_GOERLI = process.env.PRIVATE_KEY_GOERLI;
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 const forkingData = FORK_FUJI ? {
   url: 'https://api.avax-test.network/ext/bc/C/rpc',
@@ -88,18 +87,18 @@ export default {
       url: 'https://api.avax-test.network/ext/bc/C/rpc',
       gasPrice: 225000000000,
       chainId: 43113,
-      accounts: [`0x${PRIVATE_KEY_FUJI}`]
+      accounts: [`0x${PRIVATE_KEY}`]
     },
     mainnet: {
       url: 'https://api.avax.network/ext/bc/C/rpc',
       gasPrice: 225000000000,
       chainId: 43114,
-      accounts: [`0x${PRIVATE_KEY_FUJI}`]
+      accounts: [`0x${PRIVATE_KEY}`]
     },
     goerli: {
       url: 'https://rpc.goerli.eth.gateway.fm',
       chainId: 5,
-      accounts: [PRIVATE_KEY_GOERLI],
+      accounts: [PRIVATE_KEY],
     }
   }
 }

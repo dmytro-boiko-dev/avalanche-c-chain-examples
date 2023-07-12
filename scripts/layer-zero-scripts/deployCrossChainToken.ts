@@ -6,11 +6,11 @@ import {ethers} from "hardhat";
 
 /**
  * deploy command:
- * npx hardhat run scripts/layer-zero-scripts/deployLayerZero.ts --network goerli
+ * npx hardhat run scripts/layer-zero-scripts/deployCrossChainToken.ts --network NAME
  */
 
 const main = async (): Promise<any> => {
-    const LayerZeroTest: ContractFactory = await ethers.getContractFactory("LayerZeroTest");
+    const LayerZeroTest: ContractFactory = await ethers.getContractFactory("CrossChainToken");
 
     // Fuji (Avalanche Testnet) & destination chain id (Goerli)
     // const lzContract: Contract = await LayerZeroTest.deploy("0x93f54D755A063cE7bB9e6Ac47Eccc8e33411d706", 10121);

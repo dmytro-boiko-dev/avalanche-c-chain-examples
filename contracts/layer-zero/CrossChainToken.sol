@@ -5,21 +5,11 @@ pragma solidity >=0.8.17;
 import "./imported/NonblockingLzApp.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-/*
-    LayerZero Optimism Goerli
-      lzChainId:10132 lzEndpoint:0xae92d5aD7583AD66E49A0c67BAd18F6ba52dDDc1
-      contract: 0x8B320E83c7CA097E98DA2eA2035bE78dA94389Ce
-    LayerZero Goerli
-      lzChainId:10121 lzEndpoint:0xbfD2135BFfbb0B5378b56643c2Df8a87552Bfa23
-      contract: 0xDD3f986D006Cb4061c3D3E94d8BdcfFE4F295125
-*/
-
 contract CrossChainToken is NonblockingLzApp, ERC20 {
     uint16 destChainId;
     
-    constructor(address _lzEndpoint) NonblockingLzApp(_lzEndpoint) ERC20("Cross Chain Token", "CCT") {
-        if (_lzEndpoint == 0xae92d5aD7583AD66E49A0c67BAd18F6ba52dDDc1) destChainId = 10121;
-        if (_lzEndpoint == 0xbfD2135BFfbb0B5378b56643c2Df8a87552Bfa23) destChainId = 10132;
+    constructor(address _lzEndpoint, uint16 _destChainId) NonblockingLzApp(_lzEndpoint) ERC20("Cross Chain B Token", "CCBT") {
+        destChainId = _destChainId;
         _mint(msg.sender, 1000000 * 10 ** decimals());
     }
 

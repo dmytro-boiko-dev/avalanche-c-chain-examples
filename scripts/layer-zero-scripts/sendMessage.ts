@@ -16,7 +16,6 @@ const main = async (): Promise<any> => {
     const signers = await ethers.getSigners();
     const owner = signers[0];
 
-    // todo: stage 1: set goerli contract as trusted to fuji contract
     const lzFujiContract: Contract = await ethers.getContractAt("LayerZeroTest", fujiContract, owner);
     // const lzGoerliContract: Contract = await ethers.getContractAt("LayerZeroTest", goerliContract, owner);
 
