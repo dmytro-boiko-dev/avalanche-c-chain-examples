@@ -4,7 +4,6 @@ import {ethers} from "hardhat";
 require('dotenv').config();
 
 /**
- * Send a message from Chain_A to Chain_B
  * run command:
  * npx hardhat run scripts/layer-zero-scripts/getBalance.ts --network NAME
  */

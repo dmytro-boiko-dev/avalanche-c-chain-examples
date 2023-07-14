@@ -2,6 +2,7 @@ import { task } from "hardhat/config"
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers"
 import { BigNumber } from "ethers"
 import "@nomiclabs/hardhat-waffle"
+import "@nomiclabs/hardhat-etherscan";
 require('dotenv').config();
 
 // When using the hardhat network, you may choose to fork Fuji or Avalanche Mainnet
@@ -10,9 +11,11 @@ require('dotenv').config();
 // For more information go to the hardhat guide
 // https://hardhat.org/hardhat-network/
 // https://hardhat.org/guides/mainnet-forking.html
+
 const FORK_FUJI = false
 const FORK_MAINNET = false
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const SNOWTRACE_API_KEY = process.env.SNOWTRACE_API_KEY;
 
 const forkingData = FORK_FUJI ? {
   url: 'https://api.avax-test.network/ext/bc/C/rpc',
@@ -38,6 +41,11 @@ task("balances", "Prints the list of AVAX account balances", async (args, hre): 
 })
 
 export default {
+  etherscan: {
+    // Your API key for Snowtrace
+    // Obtain one at https://snowtrace.io/
+    apiKey: SNOWTRACE_API_KEY,
+  },
   solidity: {
     compilers: [
       {
@@ -57,6 +65,9 @@ export default {
       },
       {
         version: "0.8.17"
+      },
+      {
+        version: "0.8.18"
       }
     ]
   },
