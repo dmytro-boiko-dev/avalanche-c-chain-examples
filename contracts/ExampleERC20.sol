@@ -5,8 +5,8 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract ExampleERC20 is ERC20, Ownable {
-  string private TOKEN_NAME = "Avalaunch Project Token";
-  string private TOKEN_SYMBOL = "APT";
+  string private TOKEN_NAME = "USDC test token";
+  string private TOKEN_SYMBOL = "USDC";
 
   uint256 private constant TOTAL_SUPPLY = 100_000_000 * 10 ** 18;
 

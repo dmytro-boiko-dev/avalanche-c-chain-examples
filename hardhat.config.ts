@@ -110,6 +110,11 @@ export default {
       url: 'https://rpc.goerli.eth.gateway.fm',
       chainId: 5,
       accounts: [PRIVATE_KEY],
+    },
+    arbitrumgoerli: {
+      url: 'https://goerli-rollup.arbitrum.io/rpc',
+      chainId: 421613,
+      accounts: [PRIVATE_KEY],
     }
   }
 }

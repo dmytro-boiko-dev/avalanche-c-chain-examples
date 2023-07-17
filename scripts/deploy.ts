@@ -4,6 +4,11 @@ import {
 } from "ethers"
 import { ethers } from "hardhat"
 
+/**
+ * run script:
+ * npx hardhat run scripts/deploy.ts --network NETWORK_NAME
+ */
+
 const main = async(): Promise<any> => {
   const Coin: ContractFactory = await ethers.getContractFactory("ExampleERC20")
   const coin: Contract = await Coin.deploy()
